@@ -1,0 +1,21 @@
+{
+    "name": "genspark-slider-client",
+    "version": "1.0.0",
+    "description": "Genspark Slide Converter - Frontend",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^5.4.0"
+    },
+    "dependencies": {
+        "codemirror": "^6.0.1",
+        "@codemirror/lang-html": "^6.4.9",
+        "@codemirror/theme-one-dark": "^6.1.2",
+        "@codemirror/view": "^6.28.0",
+        "@codemirror/state": "^6.4.1"
+    }
+}

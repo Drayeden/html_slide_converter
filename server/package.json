@@ -1,0 +1,17 @@
+{
+    "name": "genspark-slider-server",
+    "version": "1.0.0",
+    "description": "Genspark Slide Converter - Backend Server",
+    "type": "module",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "node --watch src/index.js"
+    },
+    "dependencies": {
+        "cheerio": "^1.2.0",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "pptxgenjs": "^3.12.0",
+        "puppeteer": "^22.0.0"
+    }
+}

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모듈5 - 조직에서 심리적 위축이 발생하는 지점</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Color tokens */
+        :root {
+            --navy: #0f1729;
+            --dark: #141e33;
+            --accent: #f0a500;
+            --accent2: #ff6b35;
+            --teal: #00b4d8;
+            --red: #e63946;
+            --green: #2a9d8f;
+            --purple: #7b2d8e;
+            --light: #f0f0f5;
+            --white: #ffffff;
+            --gray: #8892a4;
+            --text: #e0e0e8;
+        }
+
+        /* Shared */
+        .slide-num {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .35);
+            font-weight: 300;
+        }
+
+        .ref {
+            position: absolute;
+            bottom: 12px;
+            left: 40px;
+            right: 40px;
+            font-size: 9px;
+            color: rgba(255, 255, 255, .3);
+            line-height: 1.4;
+        }
+
+        .module-tag {
+            position: absolute;
+            top: 24px;
+            left: 40px;
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== SLIDE 1: 모듈 인덱스 ===== -->
+    <div class="slide" style="background:linear-gradient(135deg,#0f1729 0%,#1a2744 50%,#0f1729 100%);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">1 / 30</div>
+        <div
+            style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 80px;">
+            <div style="font-size:14px;color:var(--accent);letter-spacing:3px;margin-bottom:20px;font-weight:500;">사례 연구
+                · CASE STUDY</div>
+            <h1
+                style="font-size:42px;color:var(--white);font-weight:900;text-align:center;line-height:1.35;margin-bottom:16px;">
+                우리 조직의 심리적 지뢰밭은<br />어디인가?
+            </h1>
+            <p
+                style="font-size:17px;color:var(--gray);text-align:center;max-width:700px;line-height:1.6;margin-bottom:40px;">
+                권위 · 눈치 · 회식 · 단톡방 · 평판 · 성과 압박이 만드는<br />"말 못하는 구역" 지도
+            </p>
+            <!-- 5개 키워드 배지 -->
+            <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;">
+                <span
+                    style="padding:8px 20px;border-radius:20px;background:rgba(240,165,0,.15);color:var(--accent);font-size:13px;font-weight:500;border:1px solid rgba(240,165,0,.3);">⚠️
+                    권위 편향</span>
+                <span
+                    style="padding:8px 20px;border-radius:20px;background:rgba(0,180,216,.12);color:var(--teal);font-size:13px;font-weight:500;border:1px solid rgba(0,180,216,.3);">👁️
+                    눈치/체면</span>
+                <span
+                    style="padding:8px 20px;border-radius:20px;background:rgba(255,107,53,.12);color:var(--accent2);font-size:13px;font-weight:500;border:1px solid rgba(255,107,53,.3);">🍻
+                    회식 규범</span>
+                <span
+                    style="padding:8px 20px;border-radius:20px;background:rgba(123,45,142,.15);color:#c084fc;font-size:13px;font-weight:500;border:1px solid rgba(123,45,142,.3);">💬
+                    단톡방 압박</span>
+                <span
+                    style="padding:8px 20px;border-radius:20px;background:rgba(230,57,70,.12);color:var(--red);font-size:13px;font-weight:500;border:1px solid rgba(230,57,70,.3);">🏷️
+                    인상관리</span>
+            </div>
+            <!-- 핵심 메시지 박스 -->
+            <div
+                style="background:rgba(240,165,0,.08);border-left:3px solid var(--accent);padding:16px 24px;border-radius:0 8px 8px 0;max-width:680px;">
+                <p style="font-size:14px;color:var(--text);line-height:1.6;">
+                    <strong style="color:var(--accent);">핵심:</strong> 심리적 위축은 "개인의 유리멘탈"이 아니라 <strong
+                        style="color:var(--white);">조직의 신호 체계</strong>에서 생긴다.<br />
+                    지뢰밭을 찾지 못하면 팀은 문제를 숨기고, 숨긴 문제는 반드시 비용이 된다.
+                </p>
+            </div>
+            <!-- 하단 진단 질문 -->
+            <div style="margin-top:32px;display:flex;gap:16px;">
+                <div
+                    style="font-size:11px;color:var(--gray);padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.05);">
+                    ☐ 누가, 언제, 어떤 주제에서 가장 조용해지는가?</div>
+                <div
+                    style="font-size:11px;color:var(--gray);padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.05);">
+                    ☐ 침묵을 만드는 규범은 공식인가, 비공식인가?</div>
+                <div
+                    style="font-size:11px;color:var(--gray);padding:6px 14px;border-radius:6px;background:rgba(255,255,255,.05);">
+                    ☐ 그 지점이 성과에 어떤 비용을 만드는가?</div>
+            </div>
+        </div>
+        <div class="ref">Morrison, E. W., & Milliken, F. J. (2000). Organizational silence. AMR, 25(4). | Van Dyne, L.
+            et al. (2003). Employee silence/voice. JMS, 40(6). | Morrison, E. W. (2023). Voice & silence. AROP, 10.
+        </div>
+    </div>
+
+    <!-- ===== SLIDE 2: 학습 목표 & 오늘의 규칙 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">2 / 30</div>
+        <div style="flex:1;display:flex;padding:70px 50px 40px;">
+            <!-- 좌측: 학습 목표 -->
+            <div style="flex:1;padding-right:30px;">
+                <h2 style="font-size:26px;color:var(--white);font-weight:700;margin-bottom:8px;">오늘의 규칙</h2>
+                <p style="font-size:13px;color:var(--accent);margin-bottom:28px;">불편한 진실을 안전하게 말하는 연습</p>
+                <div style="margin-bottom:20px;">
+                    <p style="font-size:12px;color:var(--teal);font-weight:500;margin-bottom:12px;">📋 학습 목표 (Learning
+                        Objectives)</p>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <div
+                            style="display:flex;align-items:flex-start;gap:10px;background:rgba(0,180,216,.06);padding:12px 16px;border-radius:8px;border:1px solid rgba(0,180,216,.15);">
+                            <span style="color:var(--teal);font-size:16px;margin-top:2px;">☐</span>
+                            <div>
+                                <p style="font-size:12.5px;color:var(--text);line-height:1.5;">위축 유발
+                                    장치(권위·눈치·회식·단톡방·평판)를 <strong style="color:var(--white);">메커니즘</strong>으로 설명한다.</p>
+                                <span style="font-size:10px;color:var(--gray);">산출물: 지뢰밭 지도</span>
+                            </div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:10px;background:rgba(0,180,216,.06);padding:12px 16px;border-radius:8px;border:1px solid rgba(0,180,216,.15);">
+                            <span style="color:var(--teal);font-size:16px;margin-top:2px;">☐</span>
+                            <div>
+                                <p style="font-size:12.5px;color:var(--text);line-height:1.5;">위축을 "사건"이 아니라 <strong
+                                        style="color:var(--white);">Trigger Point</strong>로 진단한다.</p>
+                                <span style="font-size:10px;color:var(--gray);">산출물: 명시적 규범</span>
+                            </div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:10px;background:rgba(0,180,216,.06);padding:12px 16px;border-radius:8px;border:1px solid rgba(0,180,216,.15);">
+                            <span style="color:var(--teal);font-size:16px;margin-top:2px;">☐</span>
+                            <div>
+                                <p style="font-size:12.5px;color:var(--text);line-height:1.5;">지뢰밭을 <strong
+                                        style="color:var(--white);">운영 프로토콜</strong>로 전환하는 초안을 만든다.</p>
+                                <span style="font-size:10px;color:var(--gray);">산출물: 프로토콜</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 토론 장치 -->
+                <div style="background:rgba(255,255,255,.04);padding:12px 16px;border-radius:8px;margin-top:8px;">
+                    <p style="font-size:11px;color:var(--gray);margin-bottom:6px;">💡 안전한 표현 도구</p>
+                    <p style="font-size:12px;color:var(--text);font-style:italic;">"제가 보기엔… 틀릴 수도 있는데…"</p>
+                    <p style="font-size:10px;color:var(--gray);margin-top:4px;">+ 익명 포스트잇 1회 사용 가능 (회식/단톡방 주제)</p>
+                </div>
+            </div>
+            <!-- 우측: 오늘의 규칙 -->
+            <div style="flex:1;padding-left:30px;border-left:1px solid rgba(255,255,255,.08);">
+                <p style="font-size:12px;color:var(--accent);font-weight:500;margin-bottom:20px;">🛡️ 세이프티 프로토콜 (3대 규칙)
+                </p>
+                <div style="display:flex;flex-direction:column;gap:14px;">
+                    <div
+                        style="background:linear-gradient(135deg,rgba(240,165,0,.1),rgba(240,165,0,.03));padding:20px;border-radius:12px;border:1px solid rgba(240,165,0,.2);">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                            <span style="font-size:28px;">🛡️</span>
+                            <span style="font-size:18px;color:var(--accent);font-weight:700;">규칙 1: 비밀유지</span>
+                        </div>
+                        <p style="font-size:12.5px;color:var(--text);line-height:1.5;">개인/조직 식별정보는 밖으로 가져가지 않는다.</p>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,rgba(0,180,216,.1),rgba(0,180,216,.03));padding:20px;border-radius:12px;border:1px solid rgba(0,180,216,.2);">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                            <span style="font-size:28px;">🛡️</span>
+                            <span style="font-size:18px;color:var(--teal);font-weight:700;">규칙 2: 비난 금지</span>
+                        </div>
+                        <p style="font-size:12.5px;color:var(--text);line-height:1.5;">사람 평가 대신 <strong
+                                style="color:var(--white);">조건 · 과정 · 규칙</strong>을 본다.</p>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,rgba(42,157,143,.1),rgba(42,157,143,.03));padding:20px;border-radius:12px;border:1px solid rgba(42,157,143,.2);">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                            <span style="font-size:28px;">🛡️</span>
+                            <span style="font-size:18px;color:var(--green);font-weight:700;">규칙 3: 사실 우선</span>
+                        </div>
+                        <p style="font-size:12.5px;color:var(--text);line-height:1.5;">"내가 본 것 / 들은 것 / 기록된 것" → 해석은
+                            나중에.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Morrison, E. W. (2023). Employee voice & silence. AROP, 10, 79–107. | Korea Herald (2025). 3
+            out of 10 harassment cases: no response.</div>
+    </div>
+
+    <!-- ===== SLIDE 3: 한국 직장 데이터 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">3 / 30</div>
+        <div style="flex:1;display:flex;padding:70px 50px 40px;">
+            <!-- 좌: 데이터 -->
+            <div
+                style="flex:0 0 300px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-right:20px;">
+                <div style="font-size:100px;font-weight:900;color:var(--red);line-height:1;">~30%</div>
+                <p style="font-size:14px;color:var(--text);text-align:center;margin-top:12px;line-height:1.5;">괴롭힘 경험/목격
+                    후<br /><strong style="color:var(--red);">아무 조치도 하지 않음</strong></p>
+                <p style="font-size:11px;color:var(--gray);margin-top:8px;">주된 이유: 불이익(보복) 우려</p>
+            </div>
+            <!-- 중: 메커니즘 -->
+            <div style="flex:1;padding:0 24px;display:flex;flex-direction:column;justify-content:center;">
+                <p style="font-size:13px;color:var(--accent);font-weight:500;margin-bottom:16px;">침묵 정상화 경로 (5단계)</p>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <div
+                            style="background:var(--red);color:white;padding:10px 16px;border-radius:8px;font-size:12px;font-weight:600;min-width:180px;text-align:center;">
+                            ① 경험/목격</div>
+                        <span style="color:var(--gray);font-size:18px;">→</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-left:20px;">
+                        <div
+                            style="background:rgba(230,57,70,.7);color:white;padding:10px 16px;border-radius:8px;font-size:12px;font-weight:600;min-width:180px;text-align:center;">
+                            ② 신고 비용 추정 ↑</div>
+                        <span style="color:var(--gray);font-size:18px;">→</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-left:40px;">
+                        <div
+                            style="background:rgba(230,57,70,.5);color:white;padding:10px 16px;border-radius:8px;font-size:12px;font-weight:600;min-width:180px;text-align:center;">
+                            ③ 무대응 선택</div>
+                        <span style="color:var(--gray);font-size:18px;">→</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-left:60px;">
+                        <div
+                            style="background:rgba(230,57,70,.35);color:white;padding:10px 16px;border-radius:8px;font-size:12px;font-weight:600;min-width:200px;text-align:center;">
+                            ④ 주변 관찰자 학습</div>
+                        <span style="color:var(--gray);font-size:18px;">→</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-left:80px;">
+                        <div
+                            style="background:rgba(240,165,0,.8);color:var(--navy);padding:10px 16px;border-radius:8px;font-size:12px;font-weight:700;min-width:200px;text-align:center;">
+                            ⑤ 침묵의 정상화</div>
+                    </div>
+                </div>
+                <!-- 진단 질문 -->
+                <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;">
+                    <p
+                        style="font-size:11px;color:var(--gray);background:rgba(255,255,255,.04);padding:6px 12px;border-radius:4px;">
+                        ☐ 우리 팀에서 신고/문제제기의 비용은 무엇인가?</p>
+                    <p
+                        style="font-size:11px;color:var(--gray);background:rgba(255,255,255,.04);padding:6px 12px;border-radius:4px;">
+                        ☐ 무대응이 반복되는 주제는 무엇인가?</p>
+                </div>
+            </div>
+            <!-- 우: 비용 -->
+            <div
+                style="flex:0 0 240px;display:flex;flex-direction:column;justify-content:center;gap:14px;padding-left:20px;border-left:1px solid rgba(255,255,255,.06);">
+                <p style="font-size:12px;color:var(--accent2);font-weight:500;margin-bottom:4px;">조직 리스크</p>
+                <div
+                    style="background:rgba(255,107,53,.08);padding:14px;border-radius:8px;border:1px solid rgba(255,107,53,.15);">
+                    <p style="font-size:22px;margin-bottom:4px;">🔍</p>
+                    <p style="font-size:13px;color:var(--white);font-weight:600;">이슈 조기발견 실패</p>
+                    <p style="font-size:11px;color:var(--gray);">품질·안전·윤리 리스크</p>
+                </div>
+                <div
+                    style="background:rgba(255,107,53,.08);padding:14px;border-radius:8px;border:1px solid rgba(255,107,53,.15);">
+                    <p style="font-size:22px;margin-bottom:4px;">🚪</p>
+                    <p style="font-size:13px;color:var(--white);font-weight:600;">인재 이탈</p>
+                    <p style="font-size:11px;color:var(--gray);">특히 2030세대, 냉소 확대</p>
+                </div>
+                <div
+                    style="background:rgba(255,107,53,.08);padding:14px;border-radius:8px;border:1px solid rgba(255,107,53,.15);">
+                    <p style="font-size:22px;margin-bottom:4px;">📉</p>
+                    <p style="font-size:13px;color:var(--white);font-weight:600;">고객 신뢰 하락</p>
+                    <p style="font-size:11px;color:var(--gray);">내부 침묵 → 외부 사고 전이</p>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Korea Herald (2025.10.15). | Korea Times (2025.10.15). | Morrison & Milliken (2000). AMR,
+            25(4). | YDI (2025). 직장 내 괴롭힘 금지 제도 쟁점.</div>
+    </div>
+
+    <!-- ===== SLIDE 4: 권력거리 × 눈치 × 체면 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">4 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:24px;color:var(--white);font-weight:700;margin-bottom:6px;">권력거리 × 눈치 × 체면</h2>
+            <p style="font-size:14px;color:var(--accent);margin-bottom:24px;">'말하면 손해'가 기본값이 되는 메커니즘</p>
+            <div style="flex:1;display:flex;gap:24px;">
+                <!-- 3겹 레이어 다이어그램 -->
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                    <div style="position:relative;width:360px;height:320px;">
+                        <!-- 체면 (가장 큰 원) -->
+                        <div
+                            style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:220px;height:220px;border-radius:50%;background:rgba(123,45,142,.15);border:2px solid rgba(123,45,142,.4);display:flex;align-items:flex-start;justify-content:center;padding-top:30px;">
+                            <span style="font-size:13px;color:#c084fc;font-weight:600;">체면 (Chemyon)</span>
+                        </div>
+                        <!-- 눈치 -->
+                        <div
+                            style="position:absolute;top:60px;left:20px;width:200px;height:200px;border-radius:50%;background:rgba(0,180,216,.1);border:2px solid rgba(0,180,216,.3);display:flex;align-items:flex-end;justify-content:flex-start;padding:30px;">
+                            <span style="font-size:13px;color:var(--teal);font-weight:600;">눈치 (Nunchi)</span>
+                        </div>
+                        <!-- 권력거리 -->
+                        <div
+                            style="position:absolute;top:60px;right:20px;width:200px;height:200px;border-radius:50%;background:rgba(240,165,0,.1);border:2px solid rgba(240,165,0,.3);display:flex;align-items:flex-end;justify-content:flex-end;padding:30px;">
+                            <span style="font-size:13px;color:var(--accent);font-weight:600;">권력거리 (PDI)</span>
+                        </div>
+                        <!-- 중앙 교차점 -->
+                        <div
+                            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-40%);background:rgba(230,57,70,.25);padding:10px 18px;border-radius:8px;border:1px solid var(--red);z-index:2;">
+                            <p style="font-size:13px;color:var(--red);font-weight:700;text-align:center;">발언 =
+                                위험<br />Speaking Up = Risk</p>
+                        </div>
+                    </div>
+                    <!-- 발언 위험 라벨 말풍선 -->
+                    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center;">
+                        <span
+                            style="background:rgba(255,255,255,.06);padding:6px 12px;border-radius:16px;font-size:11px;color:var(--gray);border:1px solid rgba(255,255,255,.1);">💬
+                            "선 넘는다"</span>
+                        <span
+                            style="background:rgba(255,255,255,.06);padding:6px 12px;border-radius:16px;font-size:11px;color:var(--gray);border:1px solid rgba(255,255,255,.1);">💬
+                            "분위기 깬다"</span>
+                        <span
+                            style="background:rgba(255,255,255,.06);padding:6px 12px;border-radius:16px;font-size:11px;color:var(--gray);border:1px solid rgba(255,255,255,.1);">💬
+                            "까다롭다"</span>
+                        <span
+                            style="background:rgba(255,255,255,.06);padding:6px 12px;border-radius:16px;font-size:11px;color:var(--gray);border:1px solid rgba(255,255,255,.1);">💬
+                            "정치한다"</span>
+                    </div>
+                </div>
+                <!-- 우측: 진단 질문 -->
+                <div style="flex:0 0 340px;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+                    <p style="font-size:12px;color:var(--accent);font-weight:500;margin-bottom:4px;">🔎 위축 강화 3단 경로</p>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div
+                            style="background:rgba(240,165,0,.06);padding:12px 16px;border-radius:8px;border-left:3px solid var(--accent);">
+                            <p style="font-size:12px;color:var(--accent);font-weight:600;">① 위계 신호</p>
+                            <p style="font-size:11.5px;color:var(--text);">"윗사람 앞에서는 조심"</p>
+                        </div>
+                        <div
+                            style="background:rgba(0,180,216,.06);padding:12px 16px;border-radius:8px;border-left:3px solid var(--teal);">
+                            <p style="font-size:12px;color:var(--teal);font-weight:600;">② 관계 신호</p>
+                            <p style="font-size:11.5px;color:var(--text);">"불편하게 하면 관계가 깨진다"</p>
+                        </div>
+                        <div
+                            style="background:rgba(123,45,142,.06);padding:12px 16px;border-radius:8px;border-left:3px solid #c084fc;">
+                            <p style="font-size:12px;color:#c084fc;font-weight:600;">③ 평판 신호</p>
+                            <p style="font-size:11.5px;color:var(--text);">"능력/충성 의심받는다"</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+                        <p style="font-size:11px;color:var(--gray);font-weight:500;">📝 진단 질문</p>
+                        <p
+                            style="font-size:11px;color:var(--text);background:rgba(255,255,255,.04);padding:6px 10px;border-radius:4px;">
+                            ☐ '선 넘는다'는 언제 나오는가?</p>
+                        <p
+                            style="font-size:11px;color:var(--text);background:rgba(255,255,255,.04);padding:6px 10px;border-radius:4px;">
+                            ☐ 반대가 사라지는 주제는?</p>
+                        <p
+                            style="font-size:11px;color:var(--text);background:rgba(255,255,255,.04);padding:6px 10px;border-radius:4px;">
+                            ☐ 누가 가장 조용해지는가?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Clearly Cultural (n.d.). PDI. | Kim, S.-H. (2003). Korean cultural codes. JLSP. | Morrison, E.
+            W. (2023). AROP, 10.</div>
+    </div>
+
+    <!-- ===== SLIDE 5: 인상관리와 침묵 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">5 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:22px;color:var(--white);font-weight:700;margin-bottom:4px;">인상관리(Impression Management)
+                → 방어적 침묵</h2>
+            <p style="font-size:13px;color:var(--accent);margin-bottom:22px;">위축의 핵심 연료: "갈등 회피"가 아니라 <strong>평판 손실
+                    공포</strong></p>
+            <div style="flex:1;display:flex;gap:20px;">
+                <!-- 좌: 3유형 카드 -->
+                <div style="flex:0 0 320px;display:flex;flex-direction:column;gap:10px;">
+                    <div
+                        style="background:linear-gradient(135deg,rgba(230,57,70,.12),rgba(230,57,70,.04));padding:16px;border-radius:10px;border:1px solid rgba(230,57,70,.2);">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                            <span style="font-size:24px;">😰</span>
+                            <span style="font-size:14px;color:var(--red);font-weight:700;">무능 공포 침묵</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--text);line-height:1.5;">"질문하면 무능해 보일까 봐…"</p>
+                        <p style="font-size:10px;color:var(--gray);margin-top:4px;">→ 신입·비전문 영역에서 빈발</p>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,rgba(240,165,0,.12),rgba(240,165,0,.04));padding:16px;border-radius:10px;border:1px solid rgba(240,165,0,.2);">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                            <span style="font-size:24px;">🤝</span>
+                            <span style="font-size:14px;color:var(--accent);font-weight:700;">비협조 공포 침묵</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--text);line-height:1.5;">"반대하면 팀플레이어 아닌 것 같아서…"</p>
+                        <p style="font-size:10px;color:var(--gray);margin-top:4px;">→ 회의·의사결정 장면에서 빈발</p>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,rgba(123,45,142,.12),rgba(123,45,142,.04));padding:16px;border-radius:10px;border:1px solid rgba(123,45,142,.2);">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                            <span style="font-size:24px;">🏷️</span>
+                            <span style="font-size:14px;color:#c084fc;font-weight:700;">위험인물 공포 침묵</span>
+                        </div>
+                        <p style="font-size:12px;color:var(--text);line-height:1.5;">"문제 제기하면 '까다로운 사람'으로 찍힐까 봐…"</p>
+                        <p style="font-size:10px;color:var(--gray);margin-top:4px;">→ 상사/권력자 관련 이슈에서 빈발</p>
+                    </div>
+                </div>
+                <!-- 중: 흐름도 -->
+                <div
+                    style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 10px;">
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                        <div
+                            style="background:rgba(255,255,255,.08);padding:14px 24px;border-radius:10px;text-align:center;">
+                            <p style="font-size:20px;margin-bottom:4px;">⚖️</p>
+                            <p style="font-size:12px;color:var(--white);font-weight:600;">이미지 비용 계산</p>
+                            <p style="font-size:10px;color:var(--gray);">진실 vs 평판 비용</p>
+                        </div>
+                        <span style="font-size:20px;color:var(--gray);">↓</span>
+                        <div
+                            style="background:rgba(230,57,70,.15);padding:14px 24px;border-radius:10px;text-align:center;">
+                            <p style="font-size:12px;color:var(--red);font-weight:600;">방어적 침묵</p>
+                            <p style="font-size:10px;color:var(--gray);">Defensive Silence</p>
+                        </div>
+                        <span style="font-size:20px;color:var(--gray);">↓</span>
+                        <div
+                            style="background:rgba(240,165,0,.15);padding:14px 24px;border-radius:10px;text-align:center;">
+                            <p style="font-size:12px;color:var(--accent);font-weight:600;">조기경보 시스템 상실</p>
+                            <p style="font-size:10px;color:var(--gray);">품질·안전·윤리 리스크</p>
+                        </div>
+                        <span style="font-size:20px;color:var(--gray);">↓</span>
+                        <div
+                            style="background:rgba(255,107,53,.15);padding:14px 24px;border-radius:10px;text-align:center;">
+                            <p style="font-size:12px;color:var(--accent2);font-weight:600;">성과 실패</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 우: 리더 개입 질문 -->
+                <div style="flex:0 0 280px;display:flex;flex-direction:column;justify-content:center;gap:16px;">
+                    <p style="font-size:12px;color:var(--green);font-weight:500;">🎯 리더 개입의 첫 단추</p>
+                    <div
+                        style="background:rgba(42,157,143,.1);padding:20px;border-radius:12px;border:1px solid rgba(42,157,143,.25);">
+                        <p style="font-size:13px;color:var(--white);font-weight:600;margin-bottom:8px;line-height:1.5;">
+                            "이 결정을 틀리게 만들 수 있는 가정은 뭐죠?"</p>
+                        <p style="font-size:10px;color:var(--gray);">→ 사람 평가 대신 시스템 탐색</p>
+                    </div>
+                    <div
+                        style="background:rgba(42,157,143,.1);padding:20px;border-radius:12px;border:1px solid rgba(42,157,143,.25);">
+                        <p style="font-size:13px;color:var(--white);font-weight:600;margin-bottom:8px;line-height:1.5;">
+                            "지금 말하기 어려운 리스크가 있다면 무엇이죠?"</p>
+                        <p style="font-size:10px;color:var(--gray);">→ 안전 신호 제공</p>
+                    </div>
+                    <!-- 워드클라우드 -->
+                    <div style="background:rgba(255,255,255,.04);padding:12px;border-radius:8px;margin-top:8px;">
+                        <p style="font-size:10px;color:var(--gray);margin-bottom:6px;">팀 평판 리스크 단어</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                            <span style="font-size:14px;color:rgba(230,57,70,.7);font-weight:700;">찍힘</span>
+                            <span style="font-size:11px;color:rgba(240,165,0,.6);">낙인</span>
+                            <span style="font-size:13px;color:rgba(123,45,142,.6);font-weight:600;">눈밖</span>
+                            <span style="font-size:10px;color:rgba(0,180,216,.5);">까임</span>
+                            <span style="font-size:12px;color:rgba(255,107,53,.6);">왕따</span>
+                            <span style="font-size:9px;color:rgba(255,255,255,.3);">불이익</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Morrison & Milliken (2000). AMR, 25(4). | Morrison (2014, 2023). AROP. | Van Dyne et al.
+            (2003). JMS, 40(6). | Korea Herald (2025.10.15).</div>
+    </div>
+
+</body>
+
+</html>

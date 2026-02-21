@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genspark Slide Converter</title>
+    <meta name="description" content="젠스파크 슬라이드 코드를 편집 가능한 PPT로 변환하는 도구">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header id="app-header">
+            <div class="header-left">
+                <span class="logo-icon">✦</span>
+                <h1>Genspark Slide Converter</h1>
+            </div>
+            <div class="header-right">
+                <span id="slide-count-badge" class="badge hidden">0 slides</span>
+                <button id="theme-toggle" class="icon-btn" title="테마 전환">🌙</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Left Panel: Code Editor -->
+            <section id="editor-panel" class="panel">
+                <div class="panel-header">
+                    <h2>📝 슬라이드 입력</h2>
+                    <div class="panel-actions">
+                        <button id="btn-paste" class="btn btn-sm" title="붙여넣기">📋 붙여넣기</button>
+                        <button id="btn-clear" class="btn btn-sm btn-ghost" title="지우기">✕</button>
+                    </div>
+                </div>
+                <!-- Input Mode Tabs -->
+                <div id="input-mode-tabs" class="input-tabs">
+                    <button class="tab-btn active" data-mode="code">📝 코드 직접 입력</button>
+                    <button class="tab-btn" data-mode="url">🌐 URL에서 가져오기</button>
+                </div>
+                <!-- Code Mode -->
+                <div id="code-input-area">
+                    <div id="code-editor-container"></div>
+                </div>
+                <!-- URL Mode -->
+                <div id="url-input-area" class="hidden">
+                    <div class="url-input-wrapper">
+                        <textarea id="url-textarea"
+                            placeholder="젠스파크 대화 페이지의 HTML을 붙여넣으세요.&#10;&#10;iframe URL이 자동으로 추출됩니다.&#10;또는 슬라이드 URL을 줄바꿈으로 구분하여 직접 입력할 수도 있습니다.&#10;&#10;예시:&#10;https://page.gensparksite.com/slide_agent/.../slide_1.html&#10;https://page.gensparksite.com/slide_agent/.../slide_2.html"
+                            rows="12"></textarea>
+                        <div id="url-extract-info" class="hidden">
+                            <span class="info-icon">ℹ️</span>
+                            <span id="url-extract-count"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editor-footer">
+                    <button id="btn-render" class="btn btn-primary btn-lg">
+                        <span class="btn-icon">▶</span> 미리보기 렌더링
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Preview & Validation -->
+            <section id="preview-panel" class="panel">
+                <div class="panel-header">
+                    <h2>👁 슬라이드 미리보기</h2>
+                    <div class="slide-nav">
+                        <button id="btn-prev" class="btn btn-sm btn-ghost" disabled>◀</button>
+                        <span id="slide-indicator">-</span>
+                        <button id="btn-next" class="btn btn-sm btn-ghost" disabled>▶</button>
+                    </div>
+                </div>
+
+                <!-- Preview Area -->
+                <div id="preview-wrapper">
+                    <div id="preview-container">
+                        <div id="empty-state" class="empty-state">
+                            <div class="empty-icon">🎨</div>
+                            <p>젠스파크 슬라이드 코드를 입력하고<br>"미리보기 렌더링"을 클릭하세요</p>
+                        </div>
+                        <iframe id="slide-iframe" class="hidden" sandbox="allow-same-origin allow-scripts"
+                            title="슬라이드 미리보기"></iframe>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Bar -->
+                <div id="thumbnail-bar" class="hidden">
+                    <div id="thumbnail-list"></div>
+                </div>
+
+                <!-- Validation Panel -->
+                <div id="validation-panel" class="hidden">
+                    <div class="panel-header">
+                        <h3>🔍 검증 결과</h3>
+                        <button id="btn-validate" class="btn btn-sm">검증 실행</button>
+                    </div>
+                    <div id="validation-results"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Action Bar -->
+        <footer id="action-bar" class="hidden">
+            <div class="action-group">
+                <button id="btn-validate-all" class="btn btn-outline">
+                    <span class="btn-icon">🔍</span> 전체 검증
+                </button>
+                <button id="btn-export" class="btn btn-primary">
+                    <span class="btn-icon">📥</span> PPTX + PDF 생성
+                </button>
+                <button id="btn-verify" class="btn btn-success hidden">
+                    <span class="btn-icon">✅</span> 검증 완료 (verified)
+                </button>
+            </div>
+            <div id="progress-bar" class="hidden">
+                <div id="progress-fill"></div>
+                <span id="progress-text"></span>
+            </div>
+        </footer>
+
+        <!-- Toast Container -->
+        <div id="toast-container"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

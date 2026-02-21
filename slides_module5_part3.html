@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모듈5 슬라이드 11-15</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        :root {
+            --navy: #0f1729;
+            --dark: #141e33;
+            --accent: #f0a500;
+            --accent2: #ff6b35;
+            --teal: #00b4d8;
+            --red: #e63946;
+            --green: #2a9d8f;
+            --purple: #7b2d8e;
+            --light: #f0f0f5;
+            --white: #ffffff;
+            --gray: #8892a4;
+            --text: #e0e0e8;
+        }
+
+        .slide-num {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .35);
+            font-weight: 300;
+        }
+
+        .ref {
+            position: absolute;
+            bottom: 12px;
+            left: 40px;
+            right: 40px;
+            font-size: 9px;
+            color: rgba(255, 255, 255, .3);
+            line-height: 1.4;
+        }
+
+        .module-tag {
+            position: absolute;
+            top: 24px;
+            left: 40px;
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== SLIDE 11: 꼰대 행동 분석 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">11 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:22px;color:var(--white);font-weight:700;margin-bottom:4px;">'꼰대' 행동 해부 — 개인 성격이 아니라 조직
+                구조</h2>
+            <p style="font-size:13px;color:var(--accent);margin-bottom:18px;">반복되면 "문화", 방치하면 "신호" — 30대는 떠나고, 40대는 따라
+                배운다</p>
+            <div style="flex:1;display:flex;gap:16px;">
+                <!-- 좌: 행동 유형 테이블 -->
+                <div style="flex:1;display:flex;flex-direction:column;">
+                    <p style="font-size:12px;color:var(--teal);font-weight:500;margin-bottom:10px;">📋 대표적 '꼰대' 행동 패턴
+                        (진단 목적)</p>
+                    <div style="display:flex;flex-direction:column;gap:4px;flex:1;">
+                        <div style="display:flex;gap:4px;">
+                            <div
+                                style="flex:0 0 140px;background:rgba(0,180,216,.1);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:11px;color:var(--teal);font-weight:600;">🎤 대화 독점</p>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,.04);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:10.5px;color:var(--text);">회의 시간의 70%+ 발언, 다른 사람 말 끊기</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:4px;">
+                            <div
+                                style="flex:0 0 140px;background:rgba(240,165,0,.1);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:11px;color:var(--accent);font-weight:600;">📜 경험 우위</p>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,.04);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:10.5px;color:var(--text);">"내가 해봐서 아는데…" — 데이터 무시, 새 방법 거부</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:4px;">
+                            <div
+                                style="flex:0 0 140px;background:rgba(230,57,70,.1);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:11px;color:var(--red);font-weight:600;">😤 감정 표출</p>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,.04);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:10.5px;color:var(--text);">한숨 · 눈 굴리기 · 짜증 · 비꼼 · "그것도 모르냐"</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:4px;">
+                            <div
+                                style="flex:0 0 140px;background:rgba(123,45,142,.1);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:11px;color:#c084fc;font-weight:600;">🏷️ 라벨링</p>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,.04);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:10.5px;color:var(--text);">"MZ라서…" "여자라서…" "비전공이라…"</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:4px;">
+                            <div
+                                style="flex:0 0 140px;background:rgba(255,107,53,.1);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:11px;color:var(--accent2);font-weight:600;">⏰ 사생활 침범</p>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,.04);padding:8px 12px;border-radius:6px;">
+                                <p style="font-size:10.5px;color:var(--text);">야간 카톡 · 주말 호출 · "왜 안 받아" · 사적 질문</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="margin-top:10px;background:rgba(240,165,0,.08);padding:10px 14px;border-radius:8px;border:1px dashed rgba(240,165,0,.2);">
+                        <p style="font-size:11px;color:var(--accent);font-weight:600;">⚠️ 핵심 프레임: "사람"이 아닌
+                            "공식(Formula)"로 본다</p>
+                        <p style="font-size:10px;color:var(--text);margin-top:2px;">위계(구조) + 보상(성과) + 관용(묵인) = 꼰대 반복</p>
+                    </div>
+                </div>
+                <!-- 우: 조직 비용 -->
+                <div style="flex:0 0 300px;display:flex;flex-direction:column;gap:10px;">
+                    <p style="font-size:12px;color:var(--red);font-weight:500;margin-bottom:4px;">📊 조직 비용 경로</p>
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+                        <div
+                            style="background:rgba(230,57,70,.12);padding:14px;border-radius:10px;border:1px solid rgba(230,57,70,.2);text-align:center;width:100%;">
+                            <p style="font-size:13px;color:var(--red);font-weight:700;">꼰대 행동 반복</p>
+                        </div>
+                        <span style="color:var(--gray);font-size:16px;">↓</span>
+                        <div style="display:flex;gap:6px;width:100%;">
+                            <div
+                                style="flex:1;background:rgba(240,165,0,.08);padding:10px;border-radius:8px;text-align:center;">
+                                <p style="font-size:18px;">🤐</p>
+                                <p style="font-size:10px;color:var(--text);margin-top:4px;">발언 감소</p>
+                            </div>
+                            <div
+                                style="flex:1;background:rgba(240,165,0,.08);padding:10px;border-radius:8px;text-align:center;">
+                                <p style="font-size:18px;">😒</p>
+                                <p style="font-size:10px;color:var(--text);margin-top:4px;">냉소 증가</p>
+                            </div>
+                            <div
+                                style="flex:1;background:rgba(240,165,0,.08);padding:10px;border-radius:8px;text-align:center;">
+                                <p style="font-size:18px;">🚪</p>
+                                <p style="font-size:10px;color:var(--text);margin-top:4px;">이탈 결심</p>
+                            </div>
+                        </div>
+                        <span style="color:var(--gray);font-size:16px;">↓</span>
+                        <div
+                            style="background:rgba(255,107,53,.12);padding:14px;border-radius:10px;border:1px solid rgba(255,107,53,.2);text-align:center;width:100%;">
+                            <p style="font-size:13px;color:var(--accent2);font-weight:700;">혁신·품질·인재 3중 손실</p>
+                        </div>
+                    </div>
+                    <!-- 데이터 박스 -->
+                    <div
+                        style="margin-top:auto;background:rgba(255,255,255,.04);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,.08);">
+                        <p style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px;">📈 관련 데이터</p>
+                        <p style="font-size:10.5px;color:var(--text);line-height:1.6;">
+                            · 직장 내 괴롭힘 중 <strong style="color:var(--red);">~30% 무대응</strong><br />
+                            · 20-30대 퇴사 사유 1위: <strong style="color:var(--red);">상사와의 관계</strong><br />
+                            · 꼰대 경험 → 조직시민행동(OCB) 감소
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Korea Herald (2025.10.15). | Korea Times (2025.10.15). | Kim et al. (2019). SHRM 직장 문화 보고서. |
+            Morrison (2023). AROP, 10.</div>
+    </div>
+
+    <!-- ===== SLIDE 12: 회식/퇴근 후 메시지 규범 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">12 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:22px;color:var(--white);font-weight:700;margin-bottom:4px;">회식 · 퇴근 후 메시지 — 위축을 만드는 "규범
+                없는 영역"</h2>
+            <p style="font-size:13px;color:var(--accent2);margin-bottom:18px;">해결: 금지가 아니라 <strong>명시적 규칙 + 선택권</strong>
+            </p>
+            <div style="flex:1;display:flex;gap:20px;">
+                <!-- 좌: 회식 규범 카드 -->
+                <div style="flex:1;display:flex;flex-direction:column;">
+                    <div
+                        style="background:rgba(255,107,53,.06);padding:16px;border-radius:10px;border:1px solid rgba(255,107,53,.15);flex:1;">
+                        <p style="font-size:14px;color:var(--accent2);font-weight:700;margin-bottom:12px;">🍻 회식
+                            (Hoesik) 규범 설계</p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                            <div style="background:rgba(230,57,70,.08);padding:10px;border-radius:6px;">
+                                <p style="font-size:10px;color:var(--red);font-weight:600;">❌ AS-IS (암묵)</p>
+                                <p style="font-size:10.5px;color:var(--text);line-height:1.5;margin-top:4px;">• 참석 =
+                                    의무<br />• 음주 강권<br />• 2~3차 관행<br />• 귀가 시 "벌써?"</p>
+                            </div>
+                            <div style="background:rgba(42,157,143,.08);padding:10px;border-radius:6px;">
+                                <p style="font-size:10px;color:var(--green);font-weight:600;">✅ TO-BE (명시)</p>
+                                <p style="font-size:10.5px;color:var(--text);line-height:1.5;margin-top:4px;">• 참석
+                                    선택권<br />• 음주/비음주 동등<br />• 1차 종료 시간 고정<br />• 불참 사유 불문</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;background:rgba(240,165,0,.08);padding:8px 12px;border-radius:6px;">
+                            <p style="font-size:10.5px;color:var(--accent);font-weight:500;">💡 "회식은 업무의 연장이 아니라 팀 문화의
+                                선택지"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 우: 퇴근 후 메시지 규범 -->
+                <div style="flex:1;display:flex;flex-direction:column;">
+                    <div
+                        style="background:rgba(123,45,142,.06);padding:16px;border-radius:10px;border:1px solid rgba(123,45,142,.15);flex:1;">
+                        <p style="font-size:14px;color:#c084fc;font-weight:700;margin-bottom:12px;">📱 퇴근 후 메시지 규범 설계
+                        </p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                            <div style="background:rgba(230,57,70,.08);padding:10px;border-radius:6px;">
+                                <p style="font-size:10px;color:var(--red);font-weight:600;">❌ AS-IS (암묵)</p>
+                                <p style="font-size:10.5px;color:var(--text);line-height:1.5;margin-top:4px;">• 24시간 응답
+                                    기대<br />• 읽씹 = 불충<br />• 야간 업무 지시<br />• 공사 경계 붕괴</p>
+                            </div>
+                            <div style="background:rgba(42,157,143,.08);padding:10px;border-radius:6px;">
+                                <p style="font-size:10px;color:var(--green);font-weight:600;">✅ TO-BE (명시)</p>
+                                <p style="font-size:10.5px;color:var(--text);line-height:1.5;margin-top:4px;">• 응답 SLA
+                                    명시<br />• 야간 '확인만' 규칙<br />• 긴급 = 전화만<br />• 주말 메시지 금지</p>
+                            </div>
+                        </div>
+                        <!-- 기업 사례 -->
+                        <div style="margin-top:10px;display:flex;flex-direction:column;gap:4px;">
+                            <p style="font-size:10px;color:var(--teal);font-weight:500;margin-bottom:2px;">🏢 국내 기업 사례
+                            </p>
+                            <div style="display:flex;gap:4px;">
+                                <span
+                                    style="background:rgba(0,180,216,.1);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--teal);">CJ:
+                                    퇴근 후 카톡 금지</span>
+                                <span
+                                    style="background:rgba(0,180,216,.1);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--teal);">서울시:
+                                    PC OFF 정책</span>
+                                <span
+                                    style="background:rgba(0,180,216,.1);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--teal);">SK:
+                                    정시 퇴근 캠페인</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 하단: 핵심 원칙 -->
+            <div style="margin-top:12px;display:flex;gap:12px;">
+                <div
+                    style="flex:1;background:rgba(240,165,0,.08);padding:12px 16px;border-radius:8px;border:1px solid rgba(240,165,0,.2);text-align:center;">
+                    <p style="font-size:12px;color:var(--accent);font-weight:700;">원칙 1: 선택권</p>
+                    <p style="font-size:10.5px;color:var(--text);margin-top:2px;">참석/불참 모두 존중</p>
+                </div>
+                <div
+                    style="flex:1;background:rgba(0,180,216,.08);padding:12px 16px;border-radius:8px;border:1px solid rgba(0,180,216,.2);text-align:center;">
+                    <p style="font-size:12px;color:var(--teal);font-weight:700;">원칙 2: 경계 명시</p>
+                    <p style="font-size:10.5px;color:var(--text);margin-top:2px;">업무/사적 시간 분리</p>
+                </div>
+                <div
+                    style="flex:1;background:rgba(42,157,143,.08);padding:12px 16px;border-radius:8px;border:1px solid rgba(42,157,143,.2);text-align:center;">
+                    <p style="font-size:12px;color:var(--green);font-weight:700;">원칙 3: 불이익 없음</p>
+                    <p style="font-size:10.5px;color:var(--text);margin-top:2px;">거부 = 평가 무관</p>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Hankyoreh (2017.04.04). CJ 퇴근 후 카톡 금지. | Korea Times (2016). 서울시 퇴근 후 메신저 정책. | Jipyong (2025).
+            회식의 노동법적 쟁점.</div>
+    </div>
+
+    <!-- ===== SLIDE 13: Case Clinic 방법론 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">13 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:22px;color:var(--white);font-weight:700;margin-bottom:4px;">Case Clinic — 위축 사건을 명시적
+                규범으로 전환하기</h2>
+            <p style="font-size:13px;color:var(--accent);margin-bottom:20px;">Theory U 기반 · 사건 → 구조 분석 → 운영 프로토콜</p>
+            <div style="flex:1;display:flex;gap:16px;">
+                <!-- 좌: 5단계 프로세스 -->
+                <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div
+                            style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0;">
+                            1</div>
+                        <div style="flex:1;background:rgba(240,165,0,.08);padding:12px 16px;border-radius:8px;">
+                            <p style="font-size:12px;color:var(--accent);font-weight:700;">사건 서술 (2분)</p>
+                            <p style="font-size:10.5px;color:var(--text);">발표자가 구체적 위축 장면 설명 — 이름 없이, 상황만</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div
+                            style="width:40px;height:40px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0;">
+                            2</div>
+                        <div style="flex:1;background:rgba(0,180,216,.08);padding:12px 16px;border-radius:8px;">
+                            <p style="font-size:12px;color:var(--teal);font-weight:700;">상황 질문 (3분)</p>
+                            <p style="font-size:10.5px;color:var(--text);">청중이 상황 질문만 — "그때 다른 사람은?"</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div
+                            style="width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0;">
+                            3</div>
+                        <div style="flex:1;background:rgba(42,157,143,.08);padding:12px 16px;border-radius:8px;">
+                            <p style="font-size:12px;color:var(--green);font-weight:700;">구조 분석 (5분)</p>
+                            <p style="font-size:10.5px;color:var(--text);">트리거 4요소 분해: 상황·행동·반응·결과</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div
+                            style="width:40px;height:40px;border-radius:50%;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0;">
+                            4</div>
+                        <div style="flex:1;background:rgba(255,107,53,.08);padding:12px 16px;border-radius:8px;">
+                            <p style="font-size:12px;color:var(--accent2);font-weight:700;">규범 초안 작성 (5분)</p>
+                            <p style="font-size:10.5px;color:var(--text);">"이 장면이 반복되지 않으려면, 어떤 규칙이 필요한가?"</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div
+                            style="width:40px;height:40px;border-radius:50%;background:#c084fc;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--navy);flex-shrink:0;">
+                            5</div>
+                        <div style="flex:1;background:rgba(123,45,142,.08);padding:12px 16px;border-radius:8px;">
+                            <p style="font-size:12px;color:#c084fc;font-weight:700;">합의 선언 (2분)</p>
+                            <p style="font-size:10.5px;color:var(--text);">참가자 전원 조건부 합의 → 팀 운영 규범에 반영</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 우: 운영 규칙 + 예시 -->
+                <div style="flex:0 0 340px;display:flex;flex-direction:column;gap:10px;">
+                    <div
+                        style="background:rgba(255,255,255,.04);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,.08);">
+                        <p style="font-size:12px;color:var(--accent);font-weight:600;margin-bottom:8px;">⚙️ 운영 원칙</p>
+                        <div style="display:flex;flex-direction:column;gap:6px;">
+                            <p style="font-size:10.5px;color:var(--text);">🛡️ 비밀유지: 외부 반출 금지</p>
+                            <p style="font-size:10.5px;color:var(--text);">⚖️ 비난 금지: 행동/조건만 분석</p>
+                            <p style="font-size:10.5px;color:var(--text);">📝 사실 우선: 해석 후순위</p>
+                            <p style="font-size:10.5px;color:var(--text);">⏱️ 시간 엄수: 각 단계 타이머</p>
+                        </div>
+                    </div>
+                    <div
+                        style="background:rgba(42,157,143,.06);padding:14px;border-radius:10px;border:1px solid rgba(42,157,143,.15);flex:1;">
+                        <p style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">📋 예시: 산출물</p>
+                        <div style="background:rgba(255,255,255,.03);padding:10px;border-radius:6px;margin-bottom:6px;">
+                            <p style="font-size:10px;color:var(--gray);font-weight:500;">사건</p>
+                            <p style="font-size:10.5px;color:var(--text);">"신입이 회의 중 질문하니 팀장이 한숨을 쉬었고, 이후 아무도 질문하지 않음"
+                            </p>
+                        </div>
+                        <div style="background:rgba(255,255,255,.03);padding:10px;border-radius:6px;margin-bottom:6px;">
+                            <p style="font-size:10px;color:var(--gray);font-weight:500;">구조 진단</p>
+                            <p style="font-size:10.5px;color:var(--text);">감정 표출(한숨) → 관찰 학습 → 질문 소멸</p>
+                        </div>
+                        <div style="background:rgba(42,157,143,.1);padding:10px;border-radius:6px;">
+                            <p style="font-size:10px;color:var(--green);font-weight:600;">규범 초안</p>
+                            <p style="font-size:10.5px;color:var(--text);">"질문에 대한 첫 반응은 '감사합니다'로 시작한다"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Scharmer, O. (2016). Theory U. Berrett-Koehler. | Presencing Institute (2015). Case Clinic
+            Protocol. | Morrison (2023). AROP, 10.</div>
+    </div>
+
+    <!-- ===== SLIDE 14: "위계 = 책임" 관점 전환 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">14 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <h2 style="font-size:22px;color:var(--white);font-weight:700;margin-bottom:4px;">위계(Hierarchy) = 발언 억제 장치인가,
+                보호 장치인가?</h2>
+            <p style="font-size:13px;color:var(--accent);margin-bottom:20px;">"위계를 없앨 수 없다면, 위계의 의미를 바꿔라" — Hierarchy as
+                Responsibility</p>
+            <div style="flex:1;display:flex;gap:24px;">
+                <!-- 좌: AS-IS vs TO-BE -->
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;">
+                    <div style="display:flex;gap:16px;">
+                        <!-- AS-IS -->
+                        <div
+                            style="flex:1;background:rgba(230,57,70,.08);padding:20px;border-radius:12px;border:1px solid rgba(230,57,70,.2);">
+                            <p
+                                style="font-size:13px;color:var(--red);font-weight:700;margin-bottom:10px;text-align:center;">
+                                ❌ 위계 = 특권</p>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <p style="font-size:11px;color:var(--text);">• 상사 말 = 정답</p>
+                                <p style="font-size:11px;color:var(--text);">• 경력 = 발언권</p>
+                                <p style="font-size:11px;color:var(--text);">• 반대 = 도전</p>
+                                <p style="font-size:11px;color:var(--text);">• 실수 = 무능의 증거</p>
+                            </div>
+                            <div style="margin-top:10px;text-align:center;">
+                                <p style="font-size:24px;">⬇️</p>
+                                <p style="font-size:11px;color:var(--red);font-weight:600;">아래에서 위로 말 못함</p>
+                            </div>
+                        </div>
+                        <!-- TO-BE -->
+                        <div
+                            style="flex:1;background:rgba(42,157,143,.08);padding:20px;border-radius:12px;border:1px solid rgba(42,157,143,.2);">
+                            <p
+                                style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:10px;text-align:center;">
+                                ✅ 위계 = 책임</p>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <p style="font-size:11px;color:var(--text);">• 상사 역할 = 결정 품질 보장</p>
+                                <p style="font-size:11px;color:var(--text);">• 경력 = 질문 의무</p>
+                                <p style="font-size:11px;color:var(--text);">• 반대 = 팀 보호 행위</p>
+                                <p style="font-size:11px;color:var(--text);">• 실수 = 학습 기회</p>
+                            </div>
+                            <div style="margin-top:10px;text-align:center;">
+                                <p style="font-size:24px;">⬆️</p>
+                                <p style="font-size:11px;color:var(--green);font-weight:600;">모든 방향에서 발언 가능</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 전환 핵심 메시지 -->
+                    <div
+                        style="background:rgba(240,165,0,.1);padding:14px 20px;border-radius:10px;border:1px solid rgba(240,165,0,.25);text-align:center;">
+                        <p style="font-size:14px;color:var(--accent);font-weight:700;">"당신의 직급이 높을수록, 다른 사람의 발언을 보호할 책임이
+                            크다"</p>
+                        <p style="font-size:11px;color:var(--gray);margin-top:4px;">리더는 '말하는 사람'이 아니라 '들을 수 있게 만드는 사람'
+                        </p>
+                    </div>
+                </div>
+                <!-- 우: 리더 행동 3원칙 -->
+                <div style="flex:0 0 280px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+                    <p style="font-size:12px;color:var(--green);font-weight:500;margin-bottom:4px;">🎯 리더 행동 3원칙</p>
+                    <div
+                        style="background:rgba(42,157,143,.1);padding:14px;border-radius:10px;border:1px solid rgba(42,157,143,.2);">
+                        <p style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:6px;">1. 마지막에 말하기</p>
+                        <p style="font-size:10.5px;color:var(--text);line-height:1.5;">회의에서 리더가 먼저 의견을 내면, 나머지는 동조한다. →
+                            리더는 마지막에 말한다.</p>
+                    </div>
+                    <div
+                        style="background:rgba(0,180,216,.1);padding:14px;border-radius:10px;border:1px solid rgba(0,180,216,.2);">
+                        <p style="font-size:13px;color:var(--teal);font-weight:700;margin-bottom:6px;">2. 반대에 감사하기</p>
+                        <p style="font-size:10.5px;color:var(--text);line-height:1.5;">반대 의견이 나올 때: "좋은 지적입니다. 더 얘기해
+                            주세요" → 안전 신호 발송</p>
+                    </div>
+                    <div
+                        style="background:rgba(240,165,0,.1);padding:14px;border-radius:10px;border:1px solid rgba(240,165,0,.2);">
+                        <p style="font-size:13px;color:var(--accent);font-weight:700;margin-bottom:6px;">3. 실수 먼저 공개하기
+                        </p>
+                        <p style="font-size:10.5px;color:var(--text);line-height:1.5;">"지난주 내 판단이 틀렸다" → 실수 공개가 안전한 환경
+                            조성</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Edmondson, A. C. (2019). Fearless Organization. Wiley. | Morrison (2023). AROP, 10. | Sinek, S.
+            (2014). Leaders Eat Last. Portfolio.</div>
+    </div>
+
+    <!-- ===== SLIDE 15: 모듈 중간 점검 ===== -->
+    <div class="slide" style="background:linear-gradient(160deg,#0f1729,#1a2744);">
+        <div class="module-tag">MODULE 5</div>
+        <div class="slide-num">15 / 30</div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 50px 40px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
+                <div>
+                    <h2 style="font-size:22px;color:var(--white);font-weight:700;">모듈 중간 점검 — 핵심 프레임 정리</h2>
+                    <p style="font-size:13px;color:var(--accent);margin-top:4px;">여기까지 배운 3개 렌즈로 우리 팀을 진단하기</p>
+                </div>
+                <div
+                    style="background:rgba(0,180,216,.1);padding:8px 16px;border-radius:20px;border:1px solid rgba(0,180,216,.25);">
+                    <p style="font-size:11px;color:var(--teal);font-weight:600;">CHECKPOINT</p>
+                </div>
+            </div>
+            <div style="flex:1;display:flex;gap:16px;">
+                <!-- 3개 프레임 정리 -->
+                <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+                    <div
+                        style="background:rgba(240,165,0,.08);padding:16px;border-radius:10px;border:1px solid rgba(240,165,0,.2);flex:1;">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                            <span style="font-size:24px;">🔍</span>
+                            <div>
+                                <p style="font-size:14px;color:var(--accent);font-weight:700;">렌즈 1: 침묵의 4유형</p>
+                                <p style="font-size:10px;color:var(--gray);">Van Dyne et al. (2003)</p>
+                            </div>
+                        </div>
+                        <p style="font-size:11.5px;color:var(--text);line-height:1.6;">침묵은 하나가 아니다. 체념 · 방어 · 친사회 · 전략적
+                            — 동기에 따라 처방이 다르다.</p>
+                        <div style="margin-top:8px;display:flex;gap:4px;">
+                            <span
+                                style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">체념→피드백
+                                루프</span>
+                            <span
+                                style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">방어→보호
+                                장치</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background:rgba(0,180,216,.08);padding:16px;border-radius:10px;border:1px solid rgba(0,180,216,.2);flex:1;">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                            <span style="font-size:24px;">⚖️</span>
+                            <div>
+                                <p style="font-size:14px;color:var(--teal);font-weight:700;">렌즈 2: 위험 계산 모델</p>
+                                <p style="font-size:10px;color:var(--gray);">Morrison (2022)</p>
+                            </div>
+                        </div>
+                        <p style="font-size:11.5px;color:var(--text);line-height:1.6;">기대 이익 < 인식된 위험 → 침묵. 리더가 위험을 낮추는
+                                증거(4P)를 쌓아야 한다.</p>
+                                <div style="margin-top:8px;display:flex;gap:4px;">
+                                    <span
+                                        style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">Protect</span>
+                                    <span
+                                        style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">Process</span>
+                                    <span
+                                        style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">Proof</span>
+                                    <span
+                                        style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">Practice</span>
+                                </div>
+                    </div>
+                    <div
+                        style="background:rgba(42,157,143,.08);padding:16px;border-radius:10px;border:1px solid rgba(42,157,143,.2);flex:1;">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                            <span style="font-size:24px;">🗺️</span>
+                            <div>
+                                <p style="font-size:14px;color:var(--green);font-weight:700;">렌즈 3: 지뢰밭 지도</p>
+                                <p style="font-size:10px;color:var(--gray);">조직 장면 위험도 매핑</p>
+                            </div>
+                        </div>
+                        <p style="font-size:11.5px;color:var(--text);line-height:1.6;">어떤 장면(회의·보고·단톡방·회식)에서, 어떤
+                            신호(감정·위계·평판)가 침묵을 만드는가.</p>
+                        <div style="margin-top:8px;display:flex;gap:4px;">
+                            <span
+                                style="background:rgba(255,255,255,.06);padding:4px 10px;border-radius:12px;font-size:9.5px;color:var(--gray);">상황→행동→반응→결과</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 우: 자기 진단 + 다음 단계 -->
+                <div style="flex:0 0 340px;display:flex;flex-direction:column;gap:12px;">
+                    <div
+                        style="background:rgba(255,255,255,.04);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,.08);flex:1;">
+                        <p style="font-size:12px;color:var(--accent);font-weight:600;margin-bottom:10px;">📝 자기 진단 체크
+                        </p>
+                        <div style="display:flex;flex-direction:column;gap:8px;">
+                            <label
+                                style="display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text);"><span
+                                    style="color:var(--accent);">☐</span> 우리 팀 침묵의 주요 유형은?</label>
+                            <label
+                                style="display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text);"><span
+                                    style="color:var(--accent);">☐</span> 가장 위험한 장면 3개는?</label>
+                            <label
+                                style="display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text);"><span
+                                    style="color:var(--accent);">☐</span> 리더의 4P 중 가장 약한 것은?</label>
+                            <label
+                                style="display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text);"><span
+                                    style="color:var(--accent);">☐</span> 위계가 "특권"인가 "책임"인가?</label>
+                        </div>
+                    </div>
+                    <div
+                        style="background:rgba(240,165,0,.06);padding:16px;border-radius:10px;border:1px dashed rgba(240,165,0,.25);">
+                        <p style="font-size:12px;color:var(--accent);font-weight:600;margin-bottom:8px;">📍 후반부 예고 (슬라이드
+                            16-30)</p>
+                        <div style="display:flex;flex-direction:column;gap:6px;">
+                            <p style="font-size:10.5px;color:var(--text);">🔸 Case Clinic 실습 (실전 트리거 분석)</p>
+                            <p style="font-size:10.5px;color:var(--text);">🔸 규범 초안 → 팀 운영 프로토콜</p>
+                            <p style="font-size:10.5px;color:var(--text);">🔸 리더 안전 행동 실습</p>
+                            <p style="font-size:10.5px;color:var(--text);">🔸 액션 플랜 작성</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ref">Van Dyne et al. (2003). JMS, 40(6). | Morrison (2022, 2023). AROP. | Edmondson (2019). Fearless
+            Organization. | Morrison & Milliken (2000). AMR.</div>
+    </div>
+
+</body>
+
+</html>
