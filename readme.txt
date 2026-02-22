@@ -1,4 +1,4 @@
-genspark_slider - 로컬 실행 가이드
+html_slide_converter - 로컬 실행 가이드
 
 이 프로젝트는 Genspark Slide를 PPT로 변환하는 도구입니다. 
 Frontend(Client)와 Backend(Server)로 구성되어 있습니다.
@@ -11,7 +11,7 @@ Frontend(Client)와 Backend(Server)로 구성되어 있습니다.
 ## 🚀 로컬 실행 방법
 
 1. **의존성 패키지 설치**
-   프로젝트 루트 디렉토리(C:\Users\hrdre\AI\genspark_slider)에서 다음 명령어를 실행하여 모든 패키지를 설치합니다.
+   프로젝트 루트 디렉토리에서 다음 명령어를 실행하여 모든 패키지를 설치합니다.
    ```bash
    npm run install:all
    ```
