@@ -48,9 +48,10 @@ export async function captureSlide(slideHtml, options = {}) {
 
     console.log(`    [captureSlide] Setting content (${fullHtml.length} bytes, complete=${isComplete})...`);
     await page.setContent(fullHtml, {
-      waitUntil: ['networkidle2', 'domcontentloaded'],
-      timeout: 30000,
+      waitUntil: 'load',
+      timeout: 60000, // Increase timeout to 60s
     });
+
 
     // Wait for fonts, images, and external resources to load
     console.log(`    [captureSlide] Waiting for fonts...`);

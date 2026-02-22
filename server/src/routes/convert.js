@@ -85,10 +85,15 @@ router.post('/convert', async (req, res) => {
 
         // Step 4: Generate PDF
         console.log(`📄 Generating PDF...`);
-        const pdfBuffer = await generatePdf(slides, slideSize);
-        const pdfPath = getOutputPath(filename, 'pdf');
-        fs.writeFileSync(pdfPath, pdfBuffer);
-        console.log(`  ✅ PDF saved: ${pdfPath}`);
+        try {
+            const pdfBuffer = await generatePdf(slides, slideSize);
+            const pdfPath = getOutputPath(filename, 'pdf');
+            fs.writeFileSync(pdfPath, pdfBuffer);
+            console.log(`  ✅ PDF saved: ${pdfPath} (${pdfBuffer.length} bytes)`);
+        } catch (pdfErr) {
+            console.error('❌ PDF generation failed, skipping PDF:', pdfErr.message);
+            // We still have the PPTX, so we don't fail the whole request
+        }
 
         res.json({
             success: true,

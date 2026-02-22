@@ -31,11 +31,13 @@ const BADGE_SCRIPT_PATTERNS = [
  * @returns {{ slides: string[], slideSize: { w: number, h: number } }}
  */
 export function splitSlides(htmlInput) {
-    // Ensure input is a string
-    const html = typeof htmlInput === 'string' ? htmlInput : String(htmlInput || '');
-    if (!html.trim()) {
+    // Ensure input is a string and handle null/undefined
+    const rawHtml = String(htmlInput || '');
+    if (!rawHtml.trim()) {
         return { slides: [], slideSize: { w: 1280, h: 720 } };
     }
+    const html = rawHtml;
+
 
     // Step 0: Check for Genspark viewer page (tabs + HLJS code blocks)
     const viewerResult = extractSlidesFromGensparkViewer(html);

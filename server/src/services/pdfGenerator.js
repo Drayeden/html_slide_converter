@@ -21,13 +21,9 @@ export async function generatePdf(slideHtmls, slideSize = { w: 1280, h: 720 }) {
 
     if (isComplete) {
       // For complete HTML slides, render each one individually and combine
-      // Use iframe approach for each slide
       const slidesHtml = slideHtmls.map((html, i) => {
-        // Extract body content from complete HTML
-        const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-        const headMatch = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
-        const bodyContent = bodyMatch ? bodyMatch[1] : html;
-        const headContent = headMatch ? headMatch[1] : '';
+        // Robust extraction of body content
+        const bodyContent = html.replace(/[\s\S]*<body[^>]*>([\s\S]*?)<\/body>[\s\S]*/i, '$1');
 
         return `
         <div class="pdf-slide" style="
@@ -41,9 +37,8 @@ export async function generatePdf(slideHtmls, slideSize = { w: 1280, h: 720 }) {
         </div>`;
       }).join('\n');
 
-      // Extract styles from first slide for shared CSS
-      const firstHeadMatch = slideHtmls[0]?.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
-      const sharedHead = firstHeadMatch ? firstHeadMatch[1] : '';
+      // Robust extraction of head content from first slide
+      const sharedHead = slideHtmls[0].replace(/[\s\S]*<head[^>]*>([\s\S]*?)<\/head>[\s\S]*/i, '$1');
 
       fullHtml = `
       <!DOCTYPE html>
@@ -116,11 +111,16 @@ export async function generatePdf(slideHtmls, slideSize = { w: 1280, h: 720 }) {
 
     await page.setViewport({ width: w, height: h });
     await page.setContent(fullHtml, {
-      waitUntil: ['networkidle2', 'domcontentloaded'],
+      waitUntil: ['networkidle0', 'domcontentloaded'], // Improved wait strategy
       timeout: 60000,
     });
 
-    await page.evaluate(() => document.fonts.ready);
+    // Ensure fonts and specific dynamic content are ready
+    await page.evaluate(async () => {
+      if (document.fonts) await document.fonts.ready;
+    });
+
+    // Additional stabilization delay
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const pdfBuffer = await page.pdf({
@@ -131,7 +131,14 @@ export async function generatePdf(slideHtmls, slideSize = { w: 1280, h: 720 }) {
       preferCSSPageSize: true,
     });
 
+    if (!pdfBuffer || pdfBuffer.length < 2000) {
+      throw new Error('Generated PDF is too small or appears empty.');
+    }
+
     return pdfBuffer;
+  } catch (error) {
+    console.error('❌ PDF generation failed:', error.message);
+    throw error;
   } finally {
     await page.close();
   }

@@ -1,0 +1,11 @@
+2026-02-21T17:50:02.961Z
+Navigation timeout of 30000 ms exceeded
+TimeoutError: Navigation timeout of 30000 ms exceeded
+    at new Deferred (file:///C:/Users/hrdre/AI/genspark_slider/server/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:56:34)
+    at Deferred.create (file:///C:/Users/hrdre/AI/genspark_slider/server/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:18:16)
+    at new LifecycleWatcher (file:///C:/Users/hrdre/AI/genspark_slider/server/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/LifecycleWatcher.js:66:46)
+    at CdpFrame.setContent (file:///C:/Users/hrdre/AI/genspark_slider/server/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Frame.js:232:29)
+    at async CdpPage.setContent (file:///C:/Users/hrdre/AI/genspark_slider/server/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:555:13)
+    at async captureSlide (file:///C:/Users/hrdre/AI/genspark_slider/server/src/services/slideCapture.js:50:5)
+    at async captureSlides (file:///C:/Users/hrdre/AI/genspark_slider/server/src/services/slideCapture.js:83:24)
+    at async file:///C:/Users/hrdre/AI/genspark_slider/server/src/routes/convert.js:71:29
